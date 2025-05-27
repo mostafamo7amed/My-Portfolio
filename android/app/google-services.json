@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239191849405",
+    "project_id": "mostafa-mohamed-portfolio",
+    "storage_bucket": "mostafa-mohamed-portfolio.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239191849405:android:3504ba5824a2447b7efad4",
+        "android_client_info": {
+          "package_name": "com.example.my_prsonal_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR8B3ZQgXjMkjQVefplc4z2ZAyK3cp4kY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

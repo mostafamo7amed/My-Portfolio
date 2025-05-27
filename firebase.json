@@ -1,0 +1,31 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "mostafa-mohamed-portfolio",
+          "appId": "1:239191849405:android:3504ba5824a2447b7efad4",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "mostafa-mohamed-portfolio",
+          "configurations": {
+            "android": "1:239191849405:android:3504ba5824a2447b7efad4",
+            "ios": "1:239191849405:ios:0e5322d53893446b7efad4",
+            "web": "1:239191849405:web:3774e66ee9f115b97efad4"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build\\web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

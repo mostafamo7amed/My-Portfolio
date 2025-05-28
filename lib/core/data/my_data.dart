@@ -9,7 +9,7 @@ final UserModel myData = UserModel(
   name: 'Mostafa Mohamed',
   email: 'moustafamohmed203@gmail.com',
   cvLink:
-      'https://drive.google.com/file/d/12wOswdJ38E5K1J7oVYhqB0D-AHJDIKya/view?usp=drive_link',
+      'https://drive.google.com/file/d/1CZjrkX1yabaKpXtMMFBGHpsFAX2lHz4z/view?usp=sharing',
   logo: AppImages.logo,
   photo:
       'https://res.cloudinary.com/dhub8xdyb/image/upload/v1747325399/WhatsApp_Image_2025-05-15_at_17.27.45_9aeaa61f-removebg-preview_g9ourr.png',

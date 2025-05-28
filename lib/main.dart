@@ -27,7 +27,7 @@ void main() async {
       path: AppLocalizations.translationsPath,
       startLocale: AppLocalizations.english,
       saveLocale: true,
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }

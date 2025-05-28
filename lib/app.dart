@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'My Personal Portfolio',
+      title: 'Mostafa Portfolio',
       theme: lightAppTheme(context),
       darkTheme: darkAppTheme(context),
       themeMode: ThemeMode.dark,

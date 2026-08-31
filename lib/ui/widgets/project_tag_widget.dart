@@ -12,7 +12,7 @@ class ProjectTagWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.darkGray200,
+        color: Theme.of(context).brightness == Brightness.dark ? AppColors.darkGray50 : AppColors.logoColor.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(12),
       ),
       padding: const EdgeInsets.all(7),

@@ -14,7 +14,10 @@ class AppImages {
   static const String auc = '${AssetsPaths.images}/auc.jpg';
   static const String mubin = '${AssetsPaths.images}/mubin.jpg';
   static const String prefection = '${AssetsPaths.images}/prefection.jpg';
+  static const String futureApp = '${AssetsPaths.images}/futureApp.png';
+  static const String iSchool = '${AssetsPaths.images}/ischool.png';
   static const String teacher_tech = '${AssetsPaths.images}/teacher_tech.png';
+
 
 }
 

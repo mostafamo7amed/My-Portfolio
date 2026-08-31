@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../core/constants/app_assets.dart';
 import '../../../core/data/my_data.dart';
 import '../../../core/helpers/spaces.dart';
 import '../../../core/themes/app_colors.dart';
 import '../../../core/themes/app_text_styles.dart';
+import '../../../core/utils/cubit/portfolio_cubit.dart';
 import '../../../core/utils/utils.dart';
 import '../../widgets/social_icons_widget.dart';
 import 'mobile_profile_image_widget.dart';
@@ -26,13 +27,13 @@ class MobileAboutWidget extends StatelessWidget {
           Text(
             'Hi, I’m ${myData.name.split(' ').first} ',
             style: AppTextStyles.font18SemiBoldDarkGray900(context)
-                .copyWith(color: AppColors.white),
+                .copyWith(color: AppColors.getTextSecondary(context)),
           ),
           verticalSpace(10),
           Text(
             'Flutter Developer',
             style: AppTextStyles.font30SemiBoldDarkGray900(context)
-                .copyWith(color: AppColors.white, fontSize: 40),
+                .copyWith(color: AppColors.getTextSecondary(context), fontSize: 40),
           ),
           verticalSpace(10),
           Row(
@@ -63,27 +64,32 @@ class MobileAboutWidget extends StatelessWidget {
                 ),
               ),
               horizontalSpace(10),
-              SizedBox(
-                height: 40,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      side: const BorderSide(
-                          color: AppColors.logoColor),
+              BlocBuilder<PortfolioCubit, PortfolioDataState>(
+                buildWhen: (prev, curr) => prev.cvLink != curr.cvLink,
+                builder: (context, state) {
+                  return SizedBox(
+                    height: 40,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          side: const BorderSide(
+                              color: AppColors.logoColor),
+                        ),
+                      ),
+                      onPressed: () {
+                        launchUrlFunction(state.cvLink);
+                      },
+                      child: Text(
+                        'My Resume'.tr(),
+                        style:
+                        AppTextStyles.font16MediumDarkGray50(context)
+                            .copyWith(color: AppColors.white),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    launchUrlFunction(myData.cvLink);
-                  },
-                  child: Text(
-                    'My Resume'.tr(),
-                    style:
-                    AppTextStyles.font16MediumDarkGray50(context)
-                        .copyWith(color: AppColors.white),
-                  ),
-                ),
+                  );
+                },
               )
             ],
           ),
@@ -93,7 +99,7 @@ class MobileAboutWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(AppIcons.locationIcon),
+              SvgPicture.asset(AppIcons.locationIcon, color: AppColors.getTextSecondary(context)),
               horizontalSpace(5),
               Text(
                 myData.country,

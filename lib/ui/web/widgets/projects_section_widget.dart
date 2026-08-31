@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/helpers/global_keys.dart';
-import '/core/data/my_data.dart';
-
 import '../../../core/helpers/spaces.dart';
-import 'project_card_widget.dart';
+import '../../../core/utils/cubit/portfolio_cubit.dart';
 import '../../widgets/title_box_widget.dart';
+import 'project_card_widget.dart';
 
 class ProjectsSectionWidget extends StatelessWidget {
   const ProjectsSectionWidget({super.key});
@@ -20,11 +20,19 @@ class ProjectsSectionWidget extends StatelessWidget {
         children: [
           TitleBoxWidget(text: 'Projects'.tr()),
           verticalSpace(10),
-          Column(
-            children: myData.projects
-                .map((e) =>
-                    ProjectCardWidget(project: e, index: projects.indexOf(e)))
-                .toList(),
+          BlocBuilder<PortfolioCubit, PortfolioDataState>(
+            builder: (context, state) {
+              return Column(
+                children: state.projects
+                    .asMap()
+                    .entries
+                    .map((entry) => ProjectCardWidget(
+                          project: entry.value,
+                          index: entry.key,
+                        ))
+                    .toList(),
+              );
+            },
           ),
         ],
       ),

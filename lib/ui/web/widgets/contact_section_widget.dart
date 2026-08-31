@@ -12,6 +12,8 @@ import '../../../core/utils/utils.dart';
 import '../../widgets/social_icons_widget.dart';
 import '../../widgets/title_box_widget.dart';
 
+import '../../widgets/floating_icon_widget.dart';
+
 class ContactSectionWidget extends StatelessWidget {
   ContactSectionWidget({super.key});
 
@@ -48,14 +50,48 @@ class ContactSectionWidget extends StatelessWidget {
           return Container(
             key: GlobalKeys.contactKey,
             width: double.infinity,
-            color: AppColors.darkGray50,
-            padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 40),
             child: Form(
               key: formKey,
               child: Column(
                 children: [
                   TitleBoxWidget(text: 'Get in touch'.tr()),
                   verticalSpace(15),
+                  // Floating Icons Group (Reference Portfolio Style)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FloatingIconWidget(
+                        distance: 7,
+                        duration: const Duration(seconds: 4),
+                        child: _ContactBadgeIcon(
+                          icon: Icons.chat_bubble_outline_rounded,
+                          color: AppColors.logoColor,
+                        ),
+                      ),
+                      horizontalSpace(16),
+                      FloatingIconWidget(
+                        distance: 9,
+                        duration: const Duration(milliseconds: 3500),
+                        delay: const Duration(milliseconds: 600),
+                        child: _ContactBadgeIcon(
+                          icon: Icons.auto_awesome_rounded,
+                          color: const Color(0xFF22D3EE),
+                        ),
+                      ),
+                      horizontalSpace(16),
+                      FloatingIconWidget(
+                        distance: 6,
+                        duration: const Duration(seconds: 4),
+                        delay: const Duration(milliseconds: 1200),
+                        child: _ContactBadgeIcon(
+                          icon: Icons.rocket_launch_rounded,
+                          color: const Color(0xFF7C5CFF),
+                        ),
+                      ),
+                    ],
+                  ),
+                  verticalSpace(20),
                   Text(
                     'Contact me now to discuss your wonderful project or for more information. I am here to fulfill your vision through an exceptional and amazing design!'
                         .tr(),
@@ -63,6 +99,7 @@ class ContactSectionWidget extends StatelessWidget {
                     style: AppTextStyles.font20NormalDarkGray600(context),
                   ),
                   verticalSpace(30),
+
                   Row(
                     children: [
                       Expanded(
@@ -189,3 +226,39 @@ class ContactSectionWidget extends StatelessWidget {
     );
   }
 }
+
+class _ContactBadgeIcon extends StatelessWidget {
+  final IconData icon;
+  final Color color;
+
+  const _ContactBadgeIcon({required this.icon, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 46,
+      height: 46,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: color.withValues(alpha: 0.35),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.25),
+            blurRadius: 14,
+            spreadRadius: 1,
+          ),
+        ],
+      ),
+      child: Icon(
+        icon,
+        color: color,
+        size: 22,
+      ),
+    );
+  }
+}
+

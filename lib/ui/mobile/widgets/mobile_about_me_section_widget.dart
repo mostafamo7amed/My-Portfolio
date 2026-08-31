@@ -15,7 +15,7 @@ class MobileAboutMeSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: GlobalKeys.aboutKey,
-      color: AppColors.darkGray50,
+      color: Theme.of(context).brightness == Brightness.dark ? AppColors.darkGray50 : AppColors.logoColor.withValues(alpha: 0.15),
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
       child: Column(

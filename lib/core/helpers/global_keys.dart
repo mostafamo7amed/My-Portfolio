@@ -6,6 +6,7 @@ class GlobalKeys {
   static final GlobalKey skillsKey = GlobalKey();
   static final GlobalKey projectsKey = GlobalKey();
   static final GlobalKey experienceKey = GlobalKey();
+  static final GlobalKey reviewsKey = GlobalKey();
   static final GlobalKey contactKey = GlobalKey();
   static final GlobalKey<ScaffoldState> mainKey = GlobalKey();
 }

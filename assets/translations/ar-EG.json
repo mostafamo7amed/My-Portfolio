@@ -11,6 +11,7 @@
   "My Resume": "السيرة الذاتية",
   "Available for new projects": "متاح للمشاركة في المشاريع جديدة",
   "Egypt": "مصر",
+  "Cairo, Egypt": "القاهرة، مصر",
   "About Me": "عنى",
   "Skills": "المهارات",
   "The skills, tools and technologies:": "المهارات والادوات والتقنيات التي اجيدها في للعمل:",
@@ -22,5 +23,19 @@
   "Copied to clipboard:": "تم نسخ الى الحافظة:",
   "Projects": "المشاريع",
   "Some of the noteworthy projects I have built:": "بعض من المشاريع التي قمت ببناها:",
-  "Switch Theme": "تغيير الوضع"
+  "Switch Theme": "تغيير الوضع",
+  "Mostafa Mohamed": "مصطفى محمد",
+  "Name": "الاسم",
+  "Email": "البريد الإلكتروني",
+  "Write your message": "اكتب رسالتك",
+  "Send Message": "إرسال الرسالة",
+  "Please enter your name": "يرجى إدخال اسمك",
+  "Please enter your email": "يرجى إدخال بريدك الإلكتروني",
+  "Please enter a valid email": "يرجى إدخال بريد إلكتروني صحيح",
+  "Please enter your message": "يرجى إدخال رسالتك",
+  "Reviews": "التقييمات",
+  "Reviews & Testimonials": "التقييمات والآراء",
+  "What clients, team leads, and project collaborators say about my work": "ما يقوله العملاء وقادة الفرق وشركاء المشاريع عن عملي",
+  "Leave a Review": "أضف تقييمك",
+  "Submit Review": "إرسال التقييم"
 }

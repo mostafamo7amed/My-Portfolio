@@ -1,13 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_personal_portfolio/ui/widgets/skills_banner.dart';
 import '../../../core/themes/app_colors.dart';
+import '../../../core/utils/cubit/portfolio_cubit.dart';
 import '../../../core/utils/utils.dart';
 import '/core/data/my_data.dart';
 import '/ui/widgets/social_icons_widget.dart';
 import '/ui/web/widgets/image_widget.dart';
-
 import '../../../core/constants/app_assets.dart';
 import '../../../core/helpers/spaces.dart';
 import '../../../core/themes/app_text_styles.dart';
@@ -34,18 +35,18 @@ class AboutSectionWidget extends StatelessWidget {
                     Text(
                       'Hi, I’m ${myData.name.split(' ').first} ',
                       style: AppTextStyles.font18SemiBoldDarkGray900(context)
-                          .copyWith(color: AppColors.white),
+                          .copyWith(color: AppColors.getTextSecondary(context)),
                     ),
                     verticalSpace(10),
                     Text(
                       'Flutter Developer'.tr(),
                       style: AppTextStyles.font30SemiBoldDarkGray900(context)
-                          .copyWith(color: AppColors.white, fontSize: 40),
+                          .copyWith(color: AppColors.getTextSecondary(context), fontSize: 40),
                     ),
                     verticalSpace(40),
                     Row(
                       children: [
-                        SvgPicture.asset(AppIcons.locationIcon),
+                        SvgPicture.asset(AppIcons.locationIcon, color: AppColors.getTextSecondary(context)),
                         horizontalSpace(5),
                         Text(
                           myData.country,
@@ -95,27 +96,32 @@ class AboutSectionWidget extends StatelessWidget {
                           ),
                         ),
                         horizontalSpace(10),
-                        SizedBox(
-                          height: 40,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                side: const BorderSide(
-                                    color: AppColors.logoColor),
-                              ),
-                            ),
-                            onPressed: () {
-                              launchUrlFunction(myData.cvLink);
-                            },
-                            child: Text(
-                              'My Resume'.tr(),
-                              style:
-                                  AppTextStyles.font16MediumDarkGray50(context)
+                        BlocBuilder<PortfolioCubit, PortfolioDataState>(
+                          buildWhen: (prev, curr) => prev.cvLink != curr.cvLink,
+                          builder: (context, state) {
+                            return SizedBox(
+                              height: 40,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.transparent,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    side: const BorderSide(
+                                        color: AppColors.logoColor),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  launchUrlFunction(state.cvLink);
+                                },
+                                child: Text(
+                                  'My Resume'.tr(),
+                                  style: AppTextStyles.font16MediumDarkGray50(
+                                          context)
                                       .copyWith(color: AppColors.white),
-                            ),
-                          ),
+                                ),
+                              ),
+                            );
+                          },
                         )
                       ],
                     ),

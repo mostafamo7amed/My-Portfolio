@@ -11,6 +11,7 @@
   "My Resume": "My Resume",
   "Available for new projects": "Available for new projects",
   "Egypt": "Egypt",
+  "Cairo, Egypt": "Cairo, Egypt",
   "About Me": "About Me",
   "Skills": "Skills",
   "The skills, tools and technologies:": "The skills, tools and technologies",
@@ -22,5 +23,19 @@
   "Copied to clipboard:": "Copied to clipboard:",
   "Projects": "Projects",
   "Some of the noteworthy projects I have built:": "Some of the noteworthy projects I have built:",
-  "Switch Theme": "Switch Theme"
+  "Switch Theme": "Switch Theme",
+  "Mostafa Mohamed": "Mostafa Mohamed",
+  "Name": "Name",
+  "Email": "Email",
+  "Write your message": "Write your message",
+  "Send Message": "Send Message",
+  "Please enter your name": "Please enter your name",
+  "Please enter your email": "Please enter your email",
+  "Please enter a valid email": "Please enter a valid email",
+  "Please enter your message": "Please enter your message",
+  "Reviews": "Reviews",
+  "Reviews & Testimonials": "Reviews & Testimonials",
+  "What clients, team leads, and project collaborators say about my work": "What clients, team leads, and project collaborators say about my work",
+  "Leave a Review": "Leave a Review",
+  "Submit Review": "Submit Review"
 }
